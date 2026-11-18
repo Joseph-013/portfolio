@@ -46,3 +46,4 @@ Thumbs.db
 
 # Private résumé data (phone, education, experience); see scripts/build-resume.mjs
 /resume/resume.private.json
+/resume/*.pdf

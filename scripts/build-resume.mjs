@@ -2,7 +2,9 @@
 //   Public:  src/app/content/portfolio.json   (contact links, skills, education, project summaries)
 //   Private: resume/resume.private.json        (phone, project dates, experience)
 // The private file lives outside src/, so it is never bundled into the website.
-// Usage: npm run resume
+// Usage:
+//   npm run resume              -> public/<resume.href>, no phone number (served on the site)
+//   npm run resume -- --private -> resume/<resume.href>, with phone number (gitignored, for sending directly)
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer';
@@ -10,7 +12,8 @@ import puppeteer from 'puppeteer';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const site = JSON.parse(await readFile(`${root}src/app/content/portfolio.json`, 'utf8'));
 const cv = JSON.parse(await readFile(`${root}resume/resume.private.json`, 'utf8'));
-const out = `${root}public/${site.resume?.href ?? 'resume.pdf'}`;
+const isPrivate = process.argv.includes('--private');
+const out = `${root}${isPrivate ? 'resume' : 'public'}/${site.resume?.href ?? 'resume.pdf'}`;
 
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -20,7 +23,7 @@ const shortLabel = (label) => label.replace(/^linkedin\.com\//, '').replace(/\/$
 const contact = [];
 for (const link of site.contact?.links ?? []) {
   contact.push(`<a href="${esc(link.href)}">${esc(shortLabel(link.label))}</a>`);
-  if (link.href.startsWith('mailto:') && cv.phone) contact.push(esc(cv.phone));
+  if (link.href.startsWith('mailto:') && cv.phone && isPrivate) contact.push(esc(cv.phone));
 }
 
 // Projects: entries with an `id` reuse the site's title/summary; others are résumé-only.
