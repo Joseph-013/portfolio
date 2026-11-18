@@ -78,7 +78,7 @@
                   [alt]="portrait.alt"
                   fill
                   priority
-                  class="grayscale-photo object-cover"
+                  class="object-cover"
                 />
               }
             </div>
@@ -202,9 +202,9 @@
 </div>
 
 @if (content.contact; as contact) {
-  <section id="contact" class="bg-brand mt-8 scroll-mt-16 text-[#f3f2f2]">
+  <section id="contact" class="bg-foreground text-background border-brand-500 dark:border-brand-700 mt-8 scroll-mt-16 border-t-4">
     <div
-      class="mx-auto grid max-w-280 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-end gap-8 px-6 py-16"
+      class="mx-auto grid max-w-280 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-center gap-8 px-6 py-16"
     >
       @if (contact.headline) {
         <h2 class="max-w-[26ch] text-[clamp(32px,5vw,56px)] text-pretty">
@@ -214,7 +214,7 @@
       <div class="flex flex-col gap-2 text-[15px]">
         @for (link of contact.links; track link.label) {
           <a
-            class="w-fit border-b-2 border-[#f3f2f2] pb-1 text-[#f3f2f2]! no-underline"
+            class="border-brand-500 dark:border-brand-700 text-background! hover:text-brand-400! dark:hover:text-brand-700! w-fit border-b-2 pb-1 no-underline transition-colors"
             [href]="link.href"
           >
             {{ link.label }}
@@ -223,7 +223,7 @@
         @if (content.resume; as resume) {
           @if (resume.contactLabel) {
             <a
-              class="w-fit border-b-2 border-[#f3f2f2] pb-1 text-[#f3f2f2]! no-underline"
+              class="border-brand-500 dark:border-brand-700 text-background! hover:text-brand-400! dark:hover:text-brand-700! w-fit border-b-2 pb-1 no-underline transition-colors"
               [href]="resume.href"
               download
             >

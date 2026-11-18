@@ -278,6 +278,3 @@
   }
 }
 
-@utility grayscale-photo {
-  filter: grayscale(1) contrast(1.08);
-}

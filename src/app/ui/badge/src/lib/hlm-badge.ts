@@ -9,7 +9,7 @@ const badgeVariants = cva(
       variant: {
         default: 'bg-brand-100 text-brand-800',
         accent2: 'bg-brand-2-100 text-brand-2-800',
-        secondary: 'bg-ink-100 text-ink-800',
+        secondary: 'bg-ink-300 text-ink-800 dark:bg-ink-800 dark:text-ink-100',
         destructive:
           'bg-destructive/10 [a]:hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive dark:bg-destructive/20',
         outline: 'border-brand-700 text-brand-700 dark:border-brand-400 dark:text-brand-400 [a]:hover:bg-brand/10',
