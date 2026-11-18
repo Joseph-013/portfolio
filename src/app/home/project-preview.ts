@@ -22,7 +22,9 @@ import type { Project } from '../content/portfolio.model';
       >
         <hlm-dialog-header>
           <h2 hlmDialogTitle>{{ project().title }}</h2>
-          <p hlmDialogDescription>{{ project().summary }}</p>
+          @if (project().summary) {
+            <p hlmDialogDescription>{{ project().summary }}</p>
+          }
         </hlm-dialog-header>
 
         <hlm-carousel #carousel="hlmCarousel" [attr.aria-label]="project().title + ' screenshots'">

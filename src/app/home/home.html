@@ -1,7 +1,7 @@
-<div class="mx-auto max-w-280 px-6">
+<div class="bg-background/95 supports-backdrop-filter:bg-background/80 sticky top-0 z-40 backdrop-blur">
   <nav
     aria-label="Primary"
-    class="border-border flex flex-wrap items-center justify-between gap-6 border-b-2 py-4"
+    class="border-border mx-auto flex max-w-280 flex-wrap items-center justify-between gap-6 border-b-2 px-6 py-4"
   >
     <span class="font-heading text-[15px] font-extrabold tracking-widest uppercase">{{ content.site.name }}</span>
     <div class="flex items-center gap-4 text-[13px] tracking-[0.06em] uppercase">
@@ -19,172 +19,232 @@
       </button>
     </div>
   </nav>
+</div>
 
+<div class="mx-auto max-w-280 px-6">
   <main>
+    @let hero = content.hero;
     <header
       appReveal
       class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-8 py-8"
     >
       <div>
-        <h6 class="mb-4 text-brand-700 dark:text-brand-400">
-          {{ content.hero.eyebrow }}
-        </h6>
+        @if (hero.eyebrow) {
+          <h6 class="mb-4 text-brand-700 dark:text-brand-400">
+            {{ hero.eyebrow }}
+          </h6>
+        }
         <h1 class="mb-4 text-[clamp(38px,6.2vw,68px)] text-pretty">
-          {{ content.hero.headline }}
+          {{ hero.headline }}
         </h1>
-        <p class="mb-6 max-w-[46ch] text-[17px]">
-          {{ content.hero.summary }}
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a
-            hlmBtn
-            class="text-primary-foreground! no-underline"
-            [href]="content.hero.primaryCta.href"
-          >
-            {{ content.hero.primaryCta.label }}
-          </a>
-          <a
-            hlmBtn
-            variant="outline"
-            [href]="content.resume.href"
-            download
-            class="text-foreground! no-underline"
-          >
-            {{ content.resume.heroLabel }}
-          </a>
-        </div>
-      </div>
-      <figure class="flex flex-col">
-        <!-- Height follows the text column; width follows from the fixed 4:5 ratio. -->
-        <div class="relative min-h-80 flex-1">
-          <div
-            class="border-border text-muted-foreground bg-card absolute inset-y-0 left-1/2 grid aspect-4/5 h-full -translate-x-1/2 place-items-center border-2 text-sm"
-          >
-            @if (portraitSrc) {
-              <img
-                [ngSrc]="portraitSrc"
-                [alt]="content.hero.portrait.alt"
-                fill
-                priority
-                class="grayscale-photo object-cover"
-              />
-            }
-          </div>
-        </div>
-      </figure>
-    </header>
-
-    <section
-      appReveal
-      id="about"
-      class="border-border grid scroll-mt-4 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-8 border-t-2 py-8"
-    >
-      <div>
-        <h6 class="mb-4">{{ content.about.kicker }}</h6>
-        <h2 class="mb-4 max-w-[30ch]">{{ content.about.heading }}</h2>
-        @for (segments of aboutParagraphs; track $index) {
-          <p class="mb-3 max-w-[58ch]">
-            @for (segment of segments; track $index) {
-              @if (segment.href) {
-                <a [href]="segment.href">{{ segment.text }}</a>
-              } @else {
-                {{ segment.text }}
-              }
-            }
+        @if (hero.summary) {
+          <p class="mb-6 max-w-[46ch] text-[17px]">
+            {{ hero.summary }}
           </p>
         }
-        @if (content.about.links?.length) {
-          <div class="mt-4 flex flex-wrap gap-3">
-            @for (link of content.about.links; track link.label) {
-              <a hlmBtn variant="outline" [href]="link.href">{{ link.label }}</a>
+        @if (hero.primaryCta || content.resume?.heroLabel) {
+          <div class="flex flex-wrap gap-3">
+            @if (hero.primaryCta; as cta) {
+              <a hlmBtn class="text-primary-foreground! no-underline" [href]="cta.href">
+                {{ cta.label }}
+              </a>
+            }
+            @if (content.resume; as resume) {
+              @if (resume.heroLabel) {
+                <a
+                  hlmBtn
+                  variant="outline"
+                  [href]="resume.href"
+                  download
+                  class="text-foreground! no-underline"
+                >
+                  {{ resume.heroLabel }}
+                </a>
+              }
             }
           </div>
         }
       </div>
-      <div>
-        <h6 class="mb-4">{{ content.about.skillsHeading }}</h6>
-        <div class="flex flex-col gap-4">
-          @for (group of content.about.skillGroups; track group.label) {
-            <div>
-              <div class="text-foreground/70 mb-2 text-xs tracking-[0.08em] uppercase">
-                {{ group.label }}
-              </div>
-              <ul class="flex flex-wrap gap-2">
-                @for (item of group.items; track item) {
-                  <li><span hlmBadge variant="outline">{{ item }}</span></li>
-                }
-              </ul>
+      @if (hero.portrait; as portrait) {
+        <figure class="flex flex-col">
+          <!-- Height follows the text column; width follows from the fixed 4:5 ratio. -->
+          <div class="relative min-h-80 flex-1">
+            <div
+              class="border-border text-muted-foreground bg-card absolute inset-y-0 left-1/2 grid aspect-4/5 h-full -translate-x-1/2 place-items-center border-2 text-sm"
+            >
+              @if (portraitSrc) {
+                <img
+                  [ngSrc]="portraitSrc"
+                  [alt]="portrait.alt"
+                  fill
+                  priority
+                  class="grayscale-photo object-cover"
+                />
+              }
+            </div>
+          </div>
+        </figure>
+      }
+    </header>
+
+    @if (content.about; as about) {
+      <section
+        appReveal
+        id="education"
+        class="border-border grid scroll-mt-20 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-8 border-t-2 py-8"
+      >
+        <div>
+          @if (about.kicker) {
+            <h6 class="mb-4">{{ about.kicker }}</h6>
+          }
+          @if (about.heading) {
+            <h2 class="mb-4 max-w-[30ch]">{{ about.heading }}</h2>
+          }
+          @for (entry of about.education; track entry.school) {
+            <div class="mb-6 last:mb-0">
+              <h3 class="font-heading text-[17px] leading-tight font-extrabold">{{ entry.school }}</h3>
+              @if (entry.location) {
+                <div class="text-foreground/70 mt-1 text-[13px]">{{ entry.location }}</div>
+              }
+              @if (entry.items?.length) {
+                <ul class="mt-3 flex max-w-[58ch] list-disc flex-col gap-1.5 pl-5">
+                  @for (item of entry.items; track $index) {
+                    <li>
+                      @if (item.label) {
+                        <span class="font-semibold">{{ item.label }}:</span>
+                      }
+                      {{ item.text }}
+                    </li>
+                  }
+                </ul>
+              }
             </div>
           }
         </div>
-      </div>
-    </section>
-
-    <section appReveal id="work" class="border-border scroll-mt-4 border-t-2 py-8">
-      <div class="mb-6 flex flex-wrap items-baseline justify-between gap-6">
-        <h2 class="mb-0">{{ content.work.heading }}</h2>
-        <span class="text-foreground/70 text-[13px] tracking-[0.06em] uppercase">{{ content.work.period }}</span>
-      </div>
-      <div
-        class="border-border bg-border grid grid-cols-[repeat(auto-fit,minmax(min(100%,480px),1fr))] gap-0.5 border-2"
-      >
-        @for (project of content.work.projects; track project.title) {
-          <article hlmCard class="gap-3 p-6">
-            <div class="text-brand-700 dark:text-brand-400 text-xs tracking-[0.08em] uppercase">
-              {{ project.kicker }}
-            </div>
-            <h3 class="font-heading text-[17px] leading-tight font-extrabold">{{ project.title }}</h3>
-            <p class="text-foreground/80 flex-1 text-[13px]">{{ project.summary }}</p>
-            <ul class="flex flex-wrap gap-2">
-              @for (tech of project.stack; track tech) {
-                <li><span hlmBadge variant="secondary">{{ tech }}</span></li>
-              }
-            </ul>
-            <div class="border-border flex gap-4 border-t pt-2 text-[13px] whitespace-nowrap">
-              @if (project.images?.length) {
-                <app-project-preview [project]="project" />
-              }
-              @for (link of project.links; track link.label) {
-                <a [href]="link.href">{{ link.label }}</a>
+        @if (about.skillsHeading || about.skillGroups?.length) {
+          <div>
+            @if (about.skillsHeading) {
+              <h6 class="mb-4">{{ about.skillsHeading }}</h6>
+            }
+            <div class="flex flex-col gap-4">
+              @for (group of about.skillGroups; track group.label) {
+                <div>
+                  <div class="text-foreground/70 mb-2 text-xs tracking-[0.08em] uppercase">
+                    {{ group.label }}
+                  </div>
+                  <ul class="flex flex-wrap gap-2">
+                    @for (item of group.items; track item) {
+                      <li><span hlmBadge variant="outline">{{ item }}</span></li>
+                    }
+                  </ul>
+                </div>
               }
             </div>
-          </article>
+          </div>
         }
-      </div>
-    </section>
+      </section>
+    }
+
+    @if (content.projects; as work) {
+      <section appReveal id="projects" class="border-border scroll-mt-20 border-t-2 py-8">
+        @if (work.heading || work.period) {
+          <div class="mb-6 flex flex-wrap items-baseline justify-between gap-6">
+            @if (work.heading) {
+              <h2 class="mb-0">{{ work.heading }}</h2>
+            }
+            @if (work.period) {
+              <span class="text-foreground/70 text-[13px] tracking-[0.06em] uppercase">{{ work.period }}</span>
+            }
+          </div>
+        }
+        <div
+          class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,480px),1fr))] gap-6"
+        >
+          @for (project of work.projects; track project.title) {
+            <article
+              hlmCard
+              class="bg-background border-foreground/10 data-[target]:border-primary data-[target]:motion-safe:animate-highlight-pulse data-[target]:bg-[color-mix(in_oklab,var(--primary)_6%,var(--background))] scroll-mt-24 gap-3 border-2 p-6 motion-safe:transition-[border-color,background-color] motion-safe:duration-500"
+              [id]="project.id"
+              [attr.data-target]="project.id && project.id === targetId() ? '' : null"
+            >
+              @if (project.kicker) {
+                <div class="text-brand-700 dark:text-brand-400 text-xs tracking-[0.08em] uppercase">
+                  {{ project.kicker }}
+                </div>
+              }
+              <h3 class="font-heading text-[17px] leading-tight font-extrabold">{{ project.title }}</h3>
+              @if (project.summary) {
+                <p class="text-foreground/80 flex-1 text-[13px]">{{ project.summary }}</p>
+              }
+              @if (project.stack?.length) {
+                <ul class="flex flex-wrap gap-2">
+                  @for (tech of project.stack; track tech) {
+                    <li><span hlmBadge variant="secondary">{{ tech }}</span></li>
+                  }
+                </ul>
+              }
+              @if (project.images?.length || project.links?.length) {
+                <div class="border-border mt-auto flex gap-4 border-t pt-2 text-[13px] whitespace-nowrap">
+                  @if (project.images?.length) {
+                    <app-project-preview [project]="project" />
+                  }
+                  @for (link of project.links; track link.label) {
+                    <a [href]="link.href">{{ link.label }}</a>
+                  }
+                </div>
+              }
+            </article>
+          }
+        </div>
+      </section>
+    }
   </main>
 </div>
 
-<section id="contact" class="bg-brand mt-8 scroll-mt-0 text-[#f3f2f2]">
-  <div
-    class="mx-auto grid max-w-280 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-end gap-8 px-6 py-16"
-  >
-    <h2 class="max-w-[26ch] text-[clamp(32px,5vw,56px)] text-pretty">
-      {{ content.contact.headline }}
-    </h2>
-    <div class="flex flex-col gap-2 text-[15px]">
-      @for (link of content.contact.links; track link.label) {
-        <a
-          class="w-fit border-b-2 border-[#f3f2f2] pb-1 text-[#f3f2f2]! no-underline"
-          [href]="link.href"
-        >
-          {{ link.label }}
-        </a>
+@if (content.contact; as contact) {
+  <section id="contact" class="bg-brand mt-8 scroll-mt-16 text-[#f3f2f2]">
+    <div
+      class="mx-auto grid max-w-280 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-end gap-8 px-6 py-16"
+    >
+      @if (contact.headline) {
+        <h2 class="max-w-[26ch] text-[clamp(32px,5vw,56px)] text-pretty">
+          {{ contact.headline }}
+        </h2>
       }
-      <a
-        class="w-fit border-b-2 border-[#f3f2f2] pb-1 text-[#f3f2f2]! no-underline"
-        [href]="content.resume.href"
-        download
-      >
-        {{ content.resume.contactLabel }}
-      </a>
+      <div class="flex flex-col gap-2 text-[15px]">
+        @for (link of contact.links; track link.label) {
+          <a
+            class="w-fit border-b-2 border-[#f3f2f2] pb-1 text-[#f3f2f2]! no-underline"
+            [href]="link.href"
+          >
+            {{ link.label }}
+          </a>
+        }
+        @if (content.resume; as resume) {
+          @if (resume.contactLabel) {
+            <a
+              class="w-fit border-b-2 border-[#f3f2f2] pb-1 text-[#f3f2f2]! no-underline"
+              [href]="resume.href"
+              download
+            >
+              {{ resume.contactLabel }}
+            </a>
+          }
+        }
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+}
 
-<footer
-  class="mx-auto flex max-w-280 flex-wrap justify-between gap-4 p-6 text-xs tracking-[0.06em] uppercase opacity-70"
->
-  <span>{{ content.footer.left }}</span>
-  <span>{{ content.footer.right }}</span>
-</footer>
+@if (content.footer; as footer) {
+  <footer
+    class="mx-auto flex max-w-280 flex-wrap justify-between gap-4 p-6 text-xs tracking-[0.06em] uppercase opacity-70"
+  >
+    @if (footer.left) {
+      <span><app-inline-text [text]="footer.left" /></span>
+    }
+    @if (footer.right) {
+      <span><app-inline-text [text]="footer.right" /></span>
+    }
+  </footer>
+}

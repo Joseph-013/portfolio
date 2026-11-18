@@ -1,16 +1,17 @@
 {
   "site": {
     "name": "Joseph Victor Paduga",
-    "title": "Joseph Victor Paduga — Full-stack freelance developer"
+    "title": "Joseph Victor Paduga - Full-stack freelance developer",
+    "url": "https://joseph-013.github.io"
   },
   "nav": [
     {
-      "label": "Work",
-      "href": "#work"
+      "label": "Projects",
+      "href": "#projects"
     },
     {
-      "label": "About",
-      "href": "#about"
+      "label": "Education",
+      "href": "#education"
     },
     {
       "label": "Contact",
@@ -18,57 +19,103 @@
     }
   ],
   "resume": {
-    "href": "resume.pdf",
+    "href": "Joseph-Victor-Paduga-Resume.pdf",
     "heroLabel": "Download résumé (PDF)",
     "contactLabel": "Résumé (PDF)"
   },
   "hero": {
     "eyebrow": "Freelance Developer · Seeking entry role",
     "headline": "Full-stack developer.",
-    "summary": "BS Computer Science, 2025. I build and deploy the whole stack: From database to interface. Most recent role: sole developer for an international logistics company portal application. Primary languages are TypeScript, Java, and PHP.",
+    "summary": "BS Information Technology, 2025. Building and deploying the whole stack: From database to interface. Most recent role: sole developer for an international logistics company portal application. Primary languages are TypeScript, Java, and PHP.",
     "primaryCta": {
       "label": "View projects",
-      "href": "#work"
+      "href": "#projects"
     },
     "portrait": {
       "file": "",
-      "alt": "Portrait of Dana Kirsch"
+      "alt": "Portrait of Joseph Victor Paduga"
     }
   },
   "about": {
-    "kicker": "About",
-    "heading": "What I've worked on",
-    "paragraphs": [
-      "My main freelance project is a full-stack [logistics platform](https://jamcargoexpress.com) for a Canada-Philippines cargo company. It handles shipment declarations, barcode scanning, warehouse receiving, billing, and a partner rewards program.",
-      "Built with Angular, Laravel, MySQL, Docker, and Claude Code, with role-based access and CI/CD deployment."
-    ],
-    "links": [
+    "heading": "Education",
+    "education": [
       {
-        "label": "View project",
-        "href": "https://jamcargoexpress.com"
+        "school": "University of Santo Tomas",
+        "location": "Sampaloc, Manila",
+        "items": [
+          {
+            "text": "BS in Information Technology, GPA: 1.5/1 | June 2025"
+          },
+          {
+            "label": "Relevant Coursework",
+            "text": "Discrete Structures, Data Structures and Algorithms, Human-Computer Interaction, Applications Development I&II, Software Engineering, Intermediate Web Applications Development, Web Applications Development using PHP, Mobile Applications Development using Flutter"
+          },
+          {
+            "label": "Organization",
+            "text": "TomasinoWeb, Front-end developer"
+          }
+        ]
+      },
+      {
+        "school": "Batanes National Science High School",
+        "location": "Basco, Batanes",
+        "items": [
+          {
+            "text": "High School Diploma"
+          },
+          {
+            "text": "With Honors in Science Technology Engineering and Mathematics (STEM) track"
+          }
+        ]
       }
     ],
     "skillsHeading": "Skills & tools",
     "skillGroups": [
       {
-        "label": "Languages",
-        "items": ["TypeScript", "PHP", "SQL", "Java"]
+        "label": "Front-end Programming",
+        "items": ["HTML", "CSS", "React", "Angular", "Dart (Flutter)"]
       },
       {
-        "label": "Frontend",
-        "items": ["React", "Angular", "CSS/HTML"]
+        "label": "Back-end Programming",
+        "items": [
+          "REST APIs",
+          "PHP/Laravel",
+          "C#/ASP.NET MVC",
+          "Java/Kotlin",
+          "Node.js",
+          "JavaScript",
+          "TypeScript",
+          "SQL"
+        ]
       },
       {
-        "label": "Backend & Infra",
-        "items": ["Node", "Laravel", "MySQL", "Redis", "Docker", "GitHub Actions"]
+        "label": "Database & ORM",
+        "items": ["MySQL", "SQLite", "Drizzle"]
+      },
+      {
+        "label": "Deployment (CI/CD)",
+        "items": ["GitHub Actions", "Docker"]
+      },
+      {
+        "label": "Developer Tools",
+        "items": ["Postman", "Git/GitHub"]
+      },
+      {
+        "label": "Design",
+        "items": ["Figma"]
+      },
+      {
+        "label": "AI Tools",
+        "items": ["Figma AI", "Claude Code"]
       }
     ]
   },
-  "work": {
-    "heading": "Selected work",
+  "projects": {
+    "heading": "Relevant Projects",
     "period": "2024-2026",
     "projects": [
       {
+        "id": "micropos",
         "kicker": "Point of sale",
         "title": "MicroPOS",
         "summary": "A point of sale system for small shops, built as a pnpm monorepo. Shared TypeScript business logic powers an Electron desktop app with a local SQLite database, and phones on the same network connect over LAN for camera barcode scanning and sales orders.",
@@ -155,6 +202,180 @@
         ]
       },
       {
+        "id": "tigerorgs",
+        "kicker": "Capstone",
+        "title": "TigerOrgs",
+        "summary": "A centralized hub for browsing and managing the University of Santo Tomas' student organizations and members, built in partnership with the Office for Student Affairs. As co-developer and full-stack developer, I led most of the student-facing code and the UI/UX design.",
+        "stack": ["Laravel", "React", "Inertia.js", "Tailwind CSS"],
+        "links": [
+          {
+            "label": "Source",
+            "href": "https://github.com/Joseph-013/tigerOrgs_project-forked"
+          },
+          {
+            "label": "Original repo",
+            "href": "https://github.com/HeDoesCode/tigerOrgs_project"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/tigerOrgs_project-forked/master/pictures/Screenshot2024-09-16124808.png",
+            "width": 1798,
+            "height": 1096,
+            "alt": "Browse organizations page grouped by college, with search and category filters"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/tigerOrgs_project-forked/master/pictures/Screenshot2024-09-15213134.png",
+            "width": 1352,
+            "height": 1090,
+            "alt": "Organization profile with cover photo, member count, and apply and follow actions"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/tigerOrgs_project-forked/master/pictures/Screenshot2024-09-15213216.png",
+            "width": 1345,
+            "height": 1097,
+            "alt": "Membership application progress tracker"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/tigerOrgs_project-forked/master/pictures/459157014_842040444775458_9006623979984151585_n.jpg",
+            "width": 917,
+            "height": 2048,
+            "alt": "Mobile home page with organization search"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/tigerOrgs_project-forked/master/pictures/458156555_442606012145715_3045795471527554897_n.jpg",
+            "width": 917,
+            "height": 2048,
+            "alt": "Mobile sign-in with UST Google account"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/tigerOrgs_project-forked/master/pictures/457625336_1347966519921983_2971242882572005108_n.jpg",
+            "width": 917,
+            "height": 2048,
+            "alt": "Mobile organization search filtered by college"
+          }
+        ]
+      },
+      {
+        "id": "downshift-supply",
+        "kicker": "University project",
+        "title": "Downshift Supply E-Commerce",
+        "summary": "A custom e-commerce site for Downshift Supply, an auto parts and repair shop, built for a Software Engineering course. As lead developer, I built the storefront and checkout with pickup or delivery, plus admin tools for inventory, online and on-site transactions, stock alerts, and reports.",
+        "stack": ["Laravel", "Livewire", "Tailwind CSS"],
+        "links": [
+          {
+            "label": "Source",
+            "href": "https://github.com/Joseph-013/DownshiftSupplyLivewire"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/438209156_26061963900083779_6033493168884128012_n.png",
+            "width": 1920,
+            "height": 937,
+            "alt": "Product catalog with search, filters, and pagination"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/432345066_3636986606557601_4567710963216037186_n.png",
+            "width": 1516,
+            "height": 774,
+            "alt": "Checkout with pickup or delivery and a map for the delivery address"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/435201422_368424316199187_344075048791832390_n.png",
+            "width": 1687,
+            "height": 950,
+            "alt": "Admin dashboard with low stock, out of stock, and most sold items"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/432536875_431920789235574_5299332428074130644_n.png",
+            "width": 1624,
+            "height": 795,
+            "alt": "Online transaction details with delivery map and proof of payment"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/433447821_1129941631671549_5771850221105293633_n.png",
+            "width": 1712,
+            "height": 878,
+            "alt": "On-site transaction list with item breakdown"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/432435957_948149630176929_2853718757424210029_n.png",
+            "width": 755,
+            "height": 908,
+            "alt": "Inventory item details with stock and critical level"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/437613033_1345072249492006_9134599903923352034_n.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Weekly sales report"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/DownshiftSupplyLivewire/master/pictures/436105705_958803575324486_7345692234537839276_n.png",
+            "width": 1920,
+            "height": 935,
+            "alt": "Customer login page"
+          }
+        ]
+      },
+      {
+        "id": "waveform",
+        "kicker": "University project",
+        "title": "Waveform",
+        "summary": "A Spotify-like music player built as a university finals project. As lead developer, I built the React front end with recommendations, search, playlists, favorites, and a responsive mobile layout.",
+        "stack": ["React", "React Router", "Tailwind CSS"],
+        "links": [
+          {
+            "label": "Source",
+            "href": "https://github.com/Joseph-013/React-finals-Music-App"
+          },
+          {
+            "label": "Live demo",
+            "href": "https://reactcourse-finals-music-app.vercel.app/"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/React-finals-Music-App/master/pictures/440938251_786385496804026_9084275931135000014_n.png",
+            "width": 1770,
+            "height": 1085,
+            "alt": "Home page with recommended albums, artists, and songs"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/React-finals-Music-App/master/pictures/440822590_839047608255290_41101185737198648_n.png",
+            "width": 1057,
+            "height": 885,
+            "alt": "Search results for albums and artists"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/React-finals-Music-App/master/pictures/445366065_1974712362984221_8644164820313028106_n.png",
+            "width": 1477,
+            "height": 787,
+            "alt": "Album and artist spotlight track lists"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/React-finals-Music-App/master/pictures/436175974_466716409200175_1606241674900646485_n.png",
+            "width": 1363,
+            "height": 735,
+            "alt": "Playlists library"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/React-finals-Music-App/master/pictures/440229253_297813820083944_4062509134096776607_n.jpg",
+            "width": 917,
+            "height": 2048,
+            "alt": "Mobile home with recommended artists and now-playing bar"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/React-finals-Music-App/master/pictures/440802795_377978651889050_4150708990670533070_n.jpg",
+            "width": 917,
+            "height": 2048,
+            "alt": "Mobile song list with the current track highlighted"
+          }
+        ]
+      },
+      {
+        "id": "micropos-prototype",
         "kicker": "Desktop",
         "title": "MicroPOS (Electron prototype)",
         "summary": "An offline-first desktop point of sale and the prototype for MicroPOS. Handles checkout with EAN-13 and PLU lookup, prints ESC/POS receipts over USB, and reads HID barcode scanners.",
@@ -213,6 +434,6 @@
   },
   "footer": {
     "left": "JOSEPH VICTOR PADUGA - DEVELOPER PORTFOLIO",
-    "right": "Built with Angular and Spartan"
+    "right": "Built with [Angular](https://angular.dev) and [Spartan](https://www.spartan.ng)"
   }
 }

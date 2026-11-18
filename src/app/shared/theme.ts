@@ -15,6 +15,7 @@ export class Theme {
     effect(() => {
       const theme = this.current();
       this.document.documentElement.classList.toggle('dark', theme === 'dark');
+      this.document.getElementById('favicon')?.setAttribute('href', `favicon-${theme}.svg`);
       try {
         localStorage.setItem(STORAGE_KEY, theme);
       } catch {

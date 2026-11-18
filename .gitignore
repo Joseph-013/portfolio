@@ -43,3 +43,6 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 .nx
+
+# Private résumé data (phone, education, experience); see scripts/build-resume.mjs
+/resume/resume.private.json
