@@ -1,0 +1,105 @@
+{
+  "site": {
+    "name": "Joseph Victor Paduga",
+    "title": "Joseph Victor Paduga — Full-stack freelance developer"
+  },
+  "nav": [
+    { "label": "Work", "href": "#work" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "resume": {
+    "href": "resume.pdf",
+    "heroLabel": "Download résumé (PDF)",
+    "contactLabel": "Résumé (PDF)"
+  },
+  "hero": {
+    "eyebrow": "Freelance Developer · Seeking entry role",
+    "headline": "Full-stack developer.",
+    "summary": "BS Computer Science, 2025. I build and deploy the whole stack: From database to interface. Most recent role: sole developer for an international logistics company portal application. Primary languages are TypeScript, Java, and PHP.",
+    "primaryCta": { "label": "View projects", "href": "#work" },
+    "portrait": {
+      "file": "",
+      "alt": "Portrait of Dana Kirsch"
+    }
+  },
+  "about": {
+    "kicker": "About",
+    "heading": "What I've worked on",
+    "paragraphs": [
+      "My main freelance project is a full-stack [logistics platform](https://jamcargoexpress.com) for a Canada-Philippines cargo company. It handles shipment declarations, barcode scanning, warehouse receiving, billing, and a partner rewards program.",
+      "Built with Angular, Laravel, MySQL, Docker, and Claude Code, with role-based access and CI/CD deployment."
+    ],
+    "links": [{ "label": "View project", "href": "https://jamcargoexpress.com" }],
+    "skillsHeading": "Skills & tools",
+    "skillGroups": [
+      { "label": "Languages", "items": ["TypeScript", "PHP", "SQL", "Java"] },
+      { "label": "Frontend", "items": ["React", "Angular", "CSS/HTML"] },
+      {
+        "label": "Backend & Infra",
+        "items": ["Node", "Laravel", "MySQL", "Redis", "Docker", "GitHub Actions"]
+      }
+    ]
+  },
+  "work": {
+    "heading": "Selected work",
+    "period": "2024-2026",
+    "projects": [
+      {
+        "kicker": "Personal finance",
+        "title": "Ledgerline",
+        "summary": "Imports a bank CSV, categorises transactions against user-editable rules, and charts monthly spending. Aggregation runs in Postgres; the React client renders the results.",
+        "stack": ["React", "Node", "PostgreSQL"],
+        "links": [
+          { "label": "Source", "href": "#" },
+          { "label": "Live demo", "href": "#" }
+        ]
+      },
+      {
+        "kicker": "Real time",
+        "title": "Standby",
+        "summary": "An office-hours queue for a 300-student course. Queue state is in Redis, position updates are pushed over WebSockets, and TAs can reorder the line. In use for two semesters.",
+        "stack": ["Next.js", "WebSockets", "Redis"],
+        "links": [
+          { "label": "Source", "href": "#" },
+          { "label": "Write-up", "href": "#" }
+        ]
+      },
+      {
+        "kicker": "Tooling",
+        "title": "Fernpost",
+        "summary": "A static blog engine that renders markdown to HTML files. A single Go binary, with a SQLite index for full-text search. Publishes the notes section of this site.",
+        "stack": ["Go", "SQLite", "CLI"],
+        "links": [
+          { "label": "Source", "href": "#" },
+          { "label": "Docs", "href": "#" }
+        ]
+      },
+      {
+        "kicker": "Open data",
+        "title": "Transitless",
+        "summary": "A departure board for a single bus stop. Polls a GTFS-realtime feed, reconciles it against the published schedule, and displays the next three arrivals.",
+        "stack": ["Python", "FastAPI", "GTFS"],
+        "links": [
+          { "label": "Source", "href": "#" },
+          { "label": "Live demo", "href": "#" }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Looking for junior software development roles.",
+    "links": [
+      { "label": "josephvictorpaduga@gmail.com", "href": "mailto:josephvictorpaduga@gmail.com" },
+      { "label": "github.com/Joseph-013", "href": "https://github.com/Joseph-013" },
+      {
+        "label": "linkedin.com/in/joseph-victor-paduga/",
+        "href": "https://www.linkedin.com/in/joseph-victor-paduga/"
+      }
+    ]
+  },
+  "footer": {
+    "left": "JOSEPH VICTOR PADUGA - DEVELOPER PORTFOLIO",
+    "right": "Built with Angular and Spartan"
+  }
+}
