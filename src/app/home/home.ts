@@ -6,12 +6,13 @@ import { HlmButton } from '@spartan-ng/helm/button';
 import { HlmCard } from '@spartan-ng/helm/card';
 import { imagePath, portfolio } from '../content/portfolio';
 import { Reveal } from '../shared/reveal';
+import { ProjectPreview } from './project-preview';
 import { parseInlineLinks } from '../shared/inline-links';
 import { Theme } from '../shared/theme';
 
 @Component({
   selector: 'app-home',
-  imports: [HlmBadge, HlmButton, HlmCard, NgOptimizedImage, Reveal],
+  imports: [HlmBadge, HlmButton, HlmCard, NgOptimizedImage, ProjectPreview, Reveal],
   templateUrl: './home.html',
 })
 export class Home {

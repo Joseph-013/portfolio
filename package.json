@@ -24,6 +24,8 @@
     "@tailwindcss/postcss": "^4.3.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel": ">=8.0.0 <9.0.0",
+    "embla-carousel-angular": "^22.0.0",
     "postcss": "^8.5.32",
     "rxjs": "~7.8.0",
     "tailwind-merge": "^3.5.0",

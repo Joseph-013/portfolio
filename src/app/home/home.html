@@ -141,6 +141,9 @@
               }
             </ul>
             <div class="border-border flex gap-4 border-t pt-2 text-[13px] whitespace-nowrap">
+              @if (project.images?.length) {
+                <app-project-preview [project]="project" />
+              }
               @for (link of project.links; track link.label) {
                 <a [href]="link.href">{{ link.label }}</a>
               }

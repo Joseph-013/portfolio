@@ -4,9 +4,18 @@
     "title": "Joseph Victor Paduga — Full-stack freelance developer"
   },
   "nav": [
-    { "label": "Work", "href": "#work" },
-    { "label": "About", "href": "#about" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Work",
+      "href": "#work"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "resume": {
     "href": "resume.pdf",
@@ -17,7 +26,10 @@
     "eyebrow": "Freelance Developer · Seeking entry role",
     "headline": "Full-stack developer.",
     "summary": "BS Computer Science, 2025. I build and deploy the whole stack: From database to interface. Most recent role: sole developer for an international logistics company portal application. Primary languages are TypeScript, Java, and PHP.",
-    "primaryCta": { "label": "View projects", "href": "#work" },
+    "primaryCta": {
+      "label": "View projects",
+      "href": "#work"
+    },
     "portrait": {
       "file": "",
       "alt": "Portrait of Dana Kirsch"
@@ -30,11 +42,22 @@
       "My main freelance project is a full-stack [logistics platform](https://jamcargoexpress.com) for a Canada-Philippines cargo company. It handles shipment declarations, barcode scanning, warehouse receiving, billing, and a partner rewards program.",
       "Built with Angular, Laravel, MySQL, Docker, and Claude Code, with role-based access and CI/CD deployment."
     ],
-    "links": [{ "label": "View project", "href": "https://jamcargoexpress.com" }],
+    "links": [
+      {
+        "label": "View project",
+        "href": "https://jamcargoexpress.com"
+      }
+    ],
     "skillsHeading": "Skills & tools",
     "skillGroups": [
-      { "label": "Languages", "items": ["TypeScript", "PHP", "SQL", "Java"] },
-      { "label": "Frontend", "items": ["React", "Angular", "CSS/HTML"] },
+      {
+        "label": "Languages",
+        "items": ["TypeScript", "PHP", "SQL", "Java"]
+      },
+      {
+        "label": "Frontend",
+        "items": ["React", "Angular", "CSS/HTML"]
+      },
       {
         "label": "Backend & Infra",
         "items": ["Node", "Laravel", "MySQL", "Redis", "Docker", "GitHub Actions"]
@@ -46,43 +69,127 @@
     "period": "2024-2026",
     "projects": [
       {
-        "kicker": "Personal finance",
-        "title": "Ledgerline",
-        "summary": "Imports a bank CSV, categorises transactions against user-editable rules, and charts monthly spending. Aggregation runs in Postgres; the React client renders the results.",
-        "stack": ["React", "Node", "PostgreSQL"],
+        "kicker": "Point of sale",
+        "title": "MicroPOS",
+        "summary": "A point of sale system for small shops, built as a pnpm monorepo. Shared TypeScript business logic powers an Electron desktop app with a local SQLite database, and phones on the same network connect over LAN for camera barcode scanning and sales orders.",
+        "stack": ["Angular", "Electron", "React Native", "SQLite"],
         "links": [
-          { "label": "Source", "href": "#" },
-          { "label": "Live demo", "href": "#" }
+          {
+            "label": "Source",
+            "href": "https://github.com/Joseph-013/MicroPOS-monorepo"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-checkout.png",
+            "width": 1601,
+            "height": 995,
+            "alt": "Desktop checkout screen with cart and item search"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-dashboard.png",
+            "width": 1602,
+            "height": 994,
+            "alt": "Desktop sales dashboard"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-products.png",
+            "width": 1609,
+            "height": 994,
+            "alt": "Desktop product list"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-edit-product.png",
+            "width": 1609,
+            "height": 996,
+            "alt": "Desktop product edit form"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-users.png",
+            "width": 1609,
+            "height": 991,
+            "alt": "Desktop user list with sign-in history"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-add-user.png",
+            "width": 1609,
+            "height": 991,
+            "alt": "Desktop add user form with permissions"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-sign-in.png",
+            "width": 1610,
+            "height": 997,
+            "alt": "Desktop sign-in screen"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-devices.png",
+            "width": 1613,
+            "height": 997,
+            "alt": "Devices connected over the local network"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/desktop-receipt.png",
+            "width": 384,
+            "height": 1076,
+            "alt": "Printed receipt preview"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/mobile-add-items.jpeg",
+            "width": 944,
+            "height": 2042,
+            "alt": "Mobile browser adding items to an order"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/mobile-sales-orders.jpeg",
+            "width": 944,
+            "height": 2042,
+            "alt": "Mobile browser sales order list"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-monorepo/main/preview/mobile-camera-scan.jpeg",
+            "width": 944,
+            "height": 2042,
+            "alt": "Mobile camera barcode scanner"
+          }
         ]
       },
       {
-        "kicker": "Real time",
-        "title": "Standby",
-        "summary": "An office-hours queue for a 300-student course. Queue state is in Redis, position updates are pushed over WebSockets, and TAs can reorder the line. In use for two semesters.",
-        "stack": ["Next.js", "WebSockets", "Redis"],
+        "kicker": "Desktop",
+        "title": "MicroPOS (Electron prototype)",
+        "summary": "An offline-first desktop point of sale and the prototype for MicroPOS. Handles checkout with EAN-13 and PLU lookup, prints ESC/POS receipts over USB, and reads HID barcode scanners.",
+        "stack": ["Electron", "Angular", "SQLite", "Drizzle"],
         "links": [
-          { "label": "Source", "href": "#" },
-          { "label": "Write-up", "href": "#" }
-        ]
-      },
-      {
-        "kicker": "Tooling",
-        "title": "Fernpost",
-        "summary": "A static blog engine that renders markdown to HTML files. A single Go binary, with a SQLite index for full-text search. Publishes the notes section of this site.",
-        "stack": ["Go", "SQLite", "CLI"],
-        "links": [
-          { "label": "Source", "href": "#" },
-          { "label": "Docs", "href": "#" }
-        ]
-      },
-      {
-        "kicker": "Open data",
-        "title": "Transitless",
-        "summary": "A departure board for a single bus stop. Polls a GTFS-realtime feed, reconciles it against the published schedule, and displays the next three arrivals.",
-        "stack": ["Python", "FastAPI", "GTFS"],
-        "links": [
-          { "label": "Source", "href": "#" },
-          { "label": "Live demo", "href": "#" }
+          {
+            "label": "Source",
+            "href": "https://github.com/Joseph-013/MicroPOS-old-1"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-old-1/main/preview/checkout.png",
+            "width": 1382,
+            "height": 998,
+            "alt": "Checkout screen with barcode lookup"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-old-1/main/preview/payment.png",
+            "width": 1382,
+            "height": 995,
+            "alt": "Payment screen"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-old-1/main/preview/sales-orders.png",
+            "width": 1381,
+            "height": 995,
+            "alt": "Sales order history"
+          },
+          {
+            "src": "https://raw.githubusercontent.com/Joseph-013/MicroPOS-old-1/main/preview/items.png",
+            "width": 1380,
+            "height": 997,
+            "alt": "Item management table"
+          }
         ]
       }
     ]
@@ -90,8 +197,14 @@
   "contact": {
     "headline": "Looking for junior software development roles.",
     "links": [
-      { "label": "josephvictorpaduga@gmail.com", "href": "mailto:josephvictorpaduga@gmail.com" },
-      { "label": "github.com/Joseph-013", "href": "https://github.com/Joseph-013" },
+      {
+        "label": "josephvictorpaduga@gmail.com",
+        "href": "mailto:josephvictorpaduga@gmail.com"
+      },
+      {
+        "label": "github.com/Joseph-013",
+        "href": "https://github.com/Joseph-013"
+      },
       {
         "label": "linkedin.com/in/joseph-victor-paduga/",
         "href": "https://www.linkedin.com/in/joseph-victor-paduga/"
